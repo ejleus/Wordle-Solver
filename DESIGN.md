@@ -16,47 +16,6 @@ while searching for a solution.
 The project also includes automated tests for the solver's core
 functions to verify correctness and handle different search cases.
 
-## `score_letter()`
-
-This function takes a letter, a vocabulary, and the number of words
-in the vocabulary. It searches through the vocabulary and returns the
-number of words containing the specified letter.
-
-The result is used to determine how frequently a letter occurs within
-the remaining vocabulary.
-
-## `score_word()`
-
-This function calculates a score for a word based on the letters it
-contains. Each unique letter contributes to the score only once.
-
-The score allows the solver to prioritize words containing letters
-that occur frequently in the remaining vocabulary.
-
-## `filter_vocabulary_gray()`
-
-This function removes words from the vocabulary that contain a letter
-known to be absent from the target word.
-
-Words containing the specified letter are removed from consideration,
-and the function returns the number of words that were filtered out.
-
-## Testing
-
-The solver includes automated test cases for its core functions.
-Testing is used to verify that vocabulary filtering, letter scoring,
-and word scoring behave correctly across different inputs.
-
-## Design Goals
-
-The main goals of the project are:
-
-- Efficiently narrow the possible solution space
-- Use letter frequency to select useful guesses
-- Keep the solver organized into reusable functions
-- Verify functionality through automated testing
-- Practice string manipulation, pointers, arrays, and file handling in C
-
 ## function 1: score_letter
 
 This function takes in a letter, vocabulary (word bank), and a number for the amount of words. The function loops over vocabulary and returns the number of words that include the specified letter.
@@ -76,3 +35,13 @@ This function takes in a letter, a position, the vocabulary, and the size of voc
 ## function 5: filter_vocabulary_green
 
 This function takes in a letter, position, the vocabulary, and the size of vocabulary. The function removes any words that do not contain the specified letter in the specified position. This leaves words that have a letter in the secret word also in the correct position. Returns the number of words filtered out.
+
+## Design Goals
+
+The main goals of the project are:
+
+- Efficiently narrow the possible solution space
+- Use letter frequency to select useful guesses
+- Keep the solver organized into reusable functions
+- Verify functionality through automated testing
+- Practice string manipulation, pointers, arrays, and file handling in C
