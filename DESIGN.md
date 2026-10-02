@@ -1,16 +1,61 @@
-# Homework 6: Design Document
+# Word Search Solver — Design Document
 
-  * author: Emmanuel Leus
-  * date: May 2026
+- **Author:** Emmanuel Leus
+- **Date:** May 2026
 
-## introduction
+## Overview
 
-In this homework, I will implement a solver for a fun game to amuse and amaze my
-friends and loved ones, and I will meditate on the nature of games and whether
-it is more fun to play a game, more fun to have an automated system play games
-on my behalf -- or more fun to write software to do that second thing for me.
+This project implements a command-line word-search solver in C. The
+solver uses vocabulary searching, string manipulation, pointers, and
+heuristic scoring to narrow down possible solutions.
 
-TODO(you): create a solver for the game we made last homework, write my own tests for each of the functions
+The solver can operate in two ways: it can solve for a known target
+word for testing purposes, or it can interactively suggest guesses
+while searching for a solution.
+
+The project also includes automated tests for the solver's core
+functions to verify correctness and handle different search cases.
+
+## `score_letter()`
+
+This function takes a letter, a vocabulary, and the number of words
+in the vocabulary. It searches through the vocabulary and returns the
+number of words containing the specified letter.
+
+The result is used to determine how frequently a letter occurs within
+the remaining vocabulary.
+
+## `score_word()`
+
+This function calculates a score for a word based on the letters it
+contains. Each unique letter contributes to the score only once.
+
+The score allows the solver to prioritize words containing letters
+that occur frequently in the remaining vocabulary.
+
+## `filter_vocabulary_gray()`
+
+This function removes words from the vocabulary that contain a letter
+known to be absent from the target word.
+
+Words containing the specified letter are removed from consideration,
+and the function returns the number of words that were filtered out.
+
+## Testing
+
+The solver includes automated test cases for its core functions.
+Testing is used to verify that vocabulary filtering, letter scoring,
+and word scoring behave correctly across different inputs.
+
+## Design Goals
+
+The main goals of the project are:
+
+- Efficiently narrow the possible solution space
+- Use letter frequency to select useful guesses
+- Keep the solver organized into reusable functions
+- Verify functionality through automated testing
+- Practice string manipulation, pointers, arrays, and file handling in C
 
 ## function 1: score_letter
 
