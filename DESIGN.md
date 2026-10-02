@@ -1,4 +1,4 @@
-# Word Search Solver — Design Document
+# Wordle Solver — Design Document
 
 - **Author:** Emmanuel Leus
 - **Date:** May 2026
